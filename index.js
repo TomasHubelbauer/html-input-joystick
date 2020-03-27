@@ -178,6 +178,4 @@ window.addEventListener('load', () => {
     toastsDiv.insertAdjacentElement('afterbegin', toastDiv);
     window.setTimeout(() => toastDiv.remove(), 3000);
   }
-
-  toast('Tom');
 });
