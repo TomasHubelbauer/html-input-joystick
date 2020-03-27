@@ -13,3 +13,5 @@ behaved like console controller joysticks do?
 Not maintained.
 
 ## To-Do
+
+### Find a way to make the toast gradient animation smooth using two steps only
