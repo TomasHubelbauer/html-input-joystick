@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <title>HTML input joystick</title>
+    <script src="index.js"></script>
+    <link rel="stylesheet" href="index.css" />
+  </head>
+  <body>
+    <h1>HTML <code>input[type=joystick]</code></h1>
+    <p>Drag the handles to preview their value, release to apply it. Click the track to apply directly.</p>
+    <div class="controlDiv">
+      <input type="radio" name="typeInput" checked id="linearInput" value="linear" />
+      <label for="linearInput">
+        <svg width="50" height="25">
+          <rect x1="0" y="7.5" width="50" height="10" fill="lightskyblue" />
+          <line x1="25" y1="5" x2="25" y2="20" stroke="black" stroke-width="5" stroke-linecap="round" />
+        </svg>
+      </label>
+      <input type="radio" name="typeInput" id="sinusoidalInput" value="sinusoidal" />
+      <label for="sinusoidalInput">
+        <svg width="50" height="25">
+          <path d="M0 20 Q 25 -10, 50 20" stroke="lightskyblue" fill="lightskyblue" />
+          <line x1="25" y1="5" x2="25" y2="20" stroke="black" stroke-width="5" stroke-linecap="round" />
+        </svg>
+      </label>
+      <input type="radio" name="typeInput" id="cosinusoidalInput" value="cosinusoidal" />
+      <label for="cosinusoidalInput">
+        <svg width="50" height="25">
+          <path d="M0 20 Q 12.5 5, 25 5 H0" stroke="lightskyblue" fill="lightskyblue" />
+          <path d="M50 20 Q 37.5 5, 25 5 H60" stroke="lightskyblue" fill="lightskyblue" />
+          <line x1="25" y1="5" x2="25" y2="20" stroke="black" stroke-width="5" stroke-linecap="round" />
+        </svg>
+      </label>
+    </div>
+    <div class="controlDiv">
+      <label for="xInput">X</label>
+      <input id="xInput" data-for="x" class="joystickInput" type="range" />
+      <label id="xLabel"></label>
+    </div>
+    <div class="controlDiv">
+      <label for="yInput">Y</label>
+      <input id="yInput" data-for="y" class="joystickInput" type="range" />
+      <label id="yLabel"></label>
+    </div>
+    <div class="controlDiv">
+      <label for="alphaInput">α</label>
+      <input id="alphaInput" data-for="alpha" class="joystickInput" type="range" />
+      <label id="alphaLabel"></label>
+    </div>
+    <svg id="renderSvg" width="640" height="480">
+      <g id="ballG">
+        <circle style="fill:#EBF0F3;" cx="234.146" cy="234.146" r="234.146" />
+        <path style="fill:#E56353;" d="M267.605,101.559c0,0-33.823,23.333-74.124,2.437c0,0-100.633,123.575-86.579,326.727c0,0,115.106,81.155,249.748,3C356.65,433.722,340.367,138.492,267.605,101.559z" />
+        <path style="fill:#44C4A1;" d="M356.652,433.744C356.71,434.76,356.715,434.726,356.652,433.744L356.652,433.744z" />
+        <path style="fill:#44C4A1;" d="M467.224,211.768C376.213,84.399,259.689,90.743,259.689,90.743c79.892,101.961,96.022,328.336,96.963,343.001l-0.001-0.022C483.818,357.738,467.224,211.768,467.224,211.768z" />
+        <path style="fill:#FCD462;" d="M14.803,152.078c-60.193,197.268,92.1,278.644,92.1,278.644c-2.215-218.54,86.579-322.129,86.579-322.129C90.705,61.418,14.803,152.078,14.803,152.078z" />
+        <path style="fill:#F6C358;" d="M394.686,63.756C259.689,41.659,242.67,90.691,242.67,90.691c167.03,26.866,224.554,121.077,224.554,121.077C463.283,127.138,394.686,63.756,394.686,63.756z" />
+        <path style="fill:#27A2DB;" d="M242.67,82.314c0,0,121.142-28.242,152.016-18.557c0,0-99.417-99.603-242.052-49.17c0,0,57.043,37.253,63.668,68.398L242.67,82.314z" />
+        <ellipse style="fill:#64798A;" cx="227.64" cy="97.53" rx="49.883" ry="18.794" />
+      </g>
+    </svg>
+    <div>Beach ball icon made by <a href="https://www.flaticon.com/authors/dinosoftlabs" title="DinosoftLabs">DinosoftLabs</a>.</div>
+    <p>Made by <a href="https://hubelbauer.net">Tomas Hubelbauer</a>. <a href="https://github.com/TomasHubelbauer/html-input-joystick">GitHub</a></p>
+    <div id="toastsDiv"></div>
+  </body>
+</html>
