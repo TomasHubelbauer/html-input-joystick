@@ -79,6 +79,7 @@ window.addEventListener('load', () => {
         case 'x': {
           previewOffsetX = 0;
           x += value;
+          x = getEffectiveX();
           switch (Math.sign(value)) {
             case -1: {
               toast(`${-value}px to the left`);
@@ -99,6 +100,7 @@ window.addEventListener('load', () => {
         case 'y': {
           previewOffsetY = 0;
           y += value;
+          y = getEffectiveY();
           switch (Math.sign(value)) {
             case -1: {
               toast(`${-value}px up`);
@@ -119,6 +121,7 @@ window.addEventListener('load', () => {
         case 'alpha': {
           previewOffsetAlpha = 0;
           alpha += value;
+          alpha = getEffectiveAlpha();
           switch (Math.sign(value)) {
             case -1: {
               toast(`${-value}° counter-clockwise`);
@@ -160,9 +163,7 @@ window.addEventListener('load', () => {
   const yLabel = document.getElementById('yLabel');
   const alphaLabel = document.getElementById('alphaLabel');
   function render() {
-    ballG.style.translate = `${getEffectiveX()}px ${getEffectiveY()}px`;
-    ballG.style.rotate = `${getEffectiveAlpha()}deg`;
-
+    ballG.style.transform = `translate(${getEffectiveX()}px, ${getEffectiveY()}px) rotate(${getEffectiveAlpha()}deg) scale(.1)`;
     xLabel.textContent = `${getEffectiveX()}px`;
     yLabel.textContent = `${getEffectiveY()}px`;
     alphaLabel.textContent = `${getEffectiveAlpha()}deg`;
