@@ -15,3 +15,5 @@ Not maintained.
 ## To-Do
 
 ### Find a way to make the toast gradient animation smooth using two steps only
+
+https://stackoverflow.com/q/60894337/2715716
