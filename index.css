@@ -34,7 +34,8 @@ input[type=range] {
 }
 
 .toastDiv {
-  animation: toastProgress 3s ease;
+  animation: toastProgress 3s steps(100, start);
+  background: linear-gradient(to left, aliceblue, aliceblue) no-repeat, white;
   border: 1px solid rgba(0, 0, 0, .5);
   border-radius: 5px;
   box-shadow: 0 0 5px 0 rgba(0, 0, 0, .25);
@@ -43,37 +44,10 @@ input[type=range] {
 }
 
 @keyframes toastProgress {
-  0% {
-    background: linear-gradient(to right, aliceblue 0%, aliceblue 0%, white 0%, white 100%);
+  from {
+    background-size: 0% 100%;
   }
-  10% {
-    background: linear-gradient(to right, aliceblue 0%, aliceblue 10%, white 10%, white 100%);
-  }
-  20% {
-    background: linear-gradient(to right, aliceblue 0%, aliceblue 20%, white 20%, white 100%);
-  }
-  30% {
-    background: linear-gradient(to right, aliceblue 0%, aliceblue 30%, white 30%, white 100%);
-  }
-  40% {
-    background: linear-gradient(to right, aliceblue 0%, aliceblue 40%, white 40%, white 100%);
-  }
-  50% {
-    background: linear-gradient(to right, aliceblue 0%, aliceblue 50%, white 50%, white 100%);
-  }
-  60% {
-    background: linear-gradient(to right, aliceblue 0%, aliceblue 60%, white 60%, white 100%);
-  }
-  70% {
-    background: linear-gradient(to right, aliceblue 0%, aliceblue 70%, white 70%, white 100%);
-  }
-  80% {
-    background: linear-gradient(to right, aliceblue 0%, aliceblue 80%, white 80%, white 100%);
-  }
-  90% {
-    background: linear-gradient(to right, aliceblue 0%, aliceblue 90%, white 90%, white 100%);
-  }
-  100% {
-    background: linear-gradient(to right, aliceblue 0%, aliceblue 100%, white 100%, white 100%);
+  to {
+    background-size: 100% 100%;
   }
 }
